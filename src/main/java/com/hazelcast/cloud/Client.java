@@ -13,7 +13,6 @@ import com.hazelcast.sql.SqlResult;
 import com.hazelcast.sql.SqlRow;
 
 import static com.hazelcast.client.properties.ClientProperty.HAZELCAST_CLOUD_DISCOVERY_TOKEN;
-import static com.hazelcast.client.properties.ClientProperty.STATISTICS_ENABLED;
 import static com.hazelcast.cloud.model.City.newCity;
 import static com.hazelcast.cloud.model.Country.newCountry;
 
@@ -26,7 +25,6 @@ public class Client {
 
     public static void main(String[] args) {
         ClientConfig config = new ClientConfig();
-        config.setProperty(STATISTICS_ENABLED.getName(), "true");
         config.setProperty(HAZELCAST_CLOUD_DISCOVERY_TOKEN.getName(), "YOUR_CLUSTER_DISCOVERY_TOKEN");
         config.setProperty("hazelcast.client.cloud.url", "YOUR_DISCOVERY_URL");
         config.setClusterName("YOUR_CLUSTER_NAME");

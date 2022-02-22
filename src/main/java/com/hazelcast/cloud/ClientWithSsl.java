@@ -15,7 +15,6 @@ import com.hazelcast.sql.SqlResult;
 import com.hazelcast.sql.SqlRow;
 
 import static com.hazelcast.client.properties.ClientProperty.HAZELCAST_CLOUD_DISCOVERY_TOKEN;
-import static com.hazelcast.client.properties.ClientProperty.STATISTICS_ENABLED;
 import static com.hazelcast.cloud.model.City.newCity;
 import static com.hazelcast.cloud.model.Country.newCountry;
 
@@ -36,7 +35,6 @@ public class ClientWithSsl {
         props.setProperty("javax.net.ssl.trustStorePassword", "YOUR_SSL_PASSWORD");
         ClientConfig config = new ClientConfig();
         config.getNetworkConfig().setSSLConfig(new SSLConfig().setEnabled(true).setProperties(props));
-        config.setProperty(STATISTICS_ENABLED.getName(), "true");
         config.setProperty(HAZELCAST_CLOUD_DISCOVERY_TOKEN.getName(), "YOUR_CLUSTER_DISCOVERY_TOKEN");
         config.setProperty("hazelcast.client.cloud.url", "YOUR_DISCOVERY_URL");
         config.setClusterName("YOUR_CLUSTER_NAME");
