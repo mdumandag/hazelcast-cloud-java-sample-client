@@ -19,6 +19,7 @@ public class Client {
 
     public static void main(String[] args) {
         ClientConfig config = new ClientConfig();
+        config.getNetworkConfig().setRedoOperation(true);
         config.setProperty(HAZELCAST_CLOUD_DISCOVERY_TOKEN.getName(), "YOUR_CLUSTER_DISCOVERY_TOKEN");
         config.setProperty("hazelcast.client.cloud.url", "YOUR_DISCOVERY_URL");
         config.setClusterName("YOUR_CLUSTER_NAME");
